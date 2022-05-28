@@ -1,8 +1,12 @@
+# File 2 - 4.4 - 4.5
+
 # Modified copy of fig04_01.py
 """Roll two, six-sided die 6,000 times."""
+
+# Import random module
 import random
 
-# face frequency counters
+# face frequency counters; for 2 dice, the result "1" is not possible, so I have not included it in the below variables
 frequency2 = 0
 frequency3 = 0
 frequency4 = 0
@@ -57,9 +61,16 @@ print(f'{10:>4}{frequency10:>13}')
 print(f'{11:>4}{frequency11:>13}')
 print(f'{12:>4}{frequency12:>13}')
 
+# What fraction of the time did you roll "crap"?
 craps = frequency2 + frequency3 + frequency12
+
+# What fraction of the time did you "win"?
 wins = frequency7 + frequency11
+
+# import decimal module
 from decimal import Decimal
+
 print(f'Craps: {(craps/trials)*100:.2f}%')
 print(f'Wins:  {(wins/trials)*100:.2f}%')
+
 print('Erin Swan-Siegel')
